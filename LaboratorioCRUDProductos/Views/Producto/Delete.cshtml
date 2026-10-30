@@ -1,0 +1,35 @@
+﻿@model LaboratorioCRUDProductos.Models.ProductoModel
+
+@{
+    ViewBag.Title = "Eliminar Producto";
+}
+
+<h2>Eliminar Producto</h2>
+
+<h3>¿Está seguro de que desea eliminar este producto?</h3>
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Nombre)</dt>
+        <dd>@Html.DisplayFor(model => model.Nombre)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Descripcion)</dt>
+        <dd>@Html.DisplayFor(model => model.Descripcion)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Precio)</dt>
+        <dd>@Html.DisplayFor(model => model.Precio)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Stock)</dt>
+        <dd>@Html.DisplayFor(model => model.Stock)</dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver al Listado", "Index", null, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>
